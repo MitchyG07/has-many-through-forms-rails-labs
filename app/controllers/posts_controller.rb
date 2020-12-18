@@ -10,7 +10,8 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @categories = Category.all
-    @comments = Comment.all
+    @comms = @post.comments.build
+    @us = @post.users.build
   end
 
   def create
